@@ -1,33 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 200;
+  font-family: Poppins;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+::-webkit-scrollbar {
+  display: none;
+}
+
+.maxWidthContainer {
+  max-width: 1366px;
+}
+
+.bg-custom-style {
+  filter: blur(6px);
+  transform: scale(1.03);
+}
+
+.button {
+  width: fit-content;
+  border: 1.5px solid white;
+  padding: 0px 24px;
+  border-radius: 40px;
+  transition: 0.3s;
+  font-size: 14px;
+  user-select: none;
+}
+
+.button:hover {
+  background-color: white;
+  color: #00217E;
+}
+
+
+
+/* some universal styles for our text and headings */
+.universalHeadings {
+  font-size: 42px;
+}
+
+.universalParagraphs {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.universalSecondaryHeadings {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+@media(max-width:648px) {
+  .universalHeadings {
+    font-size: 30px;
+  }
+
+  .universalParagraphs {
+    font-size: 16px;
+  }
+
+  .universalSecondaryHeadings {
+    font-size: 20px;
+  }
+
+}
+
+@media(min-width:648px) and (max-width:840px) {
+  .universalHeadings {
+    font-size: 34px;
+  }
+
+  .universalParagraphs {
+    font-size: 18px;
+  }
+
+  .universalSecondaryHeadings {
+    font-size: 22px;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media(min-width:1366px) {
+  .universalHeadings {
+    font-size: 58px;
+  }
+
+  .universalParagraphs {
+    font-size: 22px;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+
+.productImageContainer {
+  width: 500px;
+  height: 500px;
+  min-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media(max-width:648px) {
+  .productImageContainer {
+    display: none;
+  }
+}
+
+@media(min-width:1366px) {
+  .productImageContainer {
+    display: block;
+    width: 800px;
+    height: 800px;
+    transform: translate(100px, 30px);
   }
 }
